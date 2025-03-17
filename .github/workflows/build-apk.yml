@@ -1,4 +1,4 @@
-name: Build Expo APK
+name: Build APK with Expo
 
 on:
   push:
@@ -8,30 +8,24 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
 
-      - name: Setup Node.js
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: 18
+          node-version: 16
 
       - name: Install dependencies
         run: npm install
 
       - name: Install Expo CLI
-        run: npm install -g eas-cli
+        run: npm install -g expo-cli eas-cli
 
-      - name: Authenticate with Expo
-        run: eas login --token ${{ secrets.EXPO_TOKEN }}
-
-      - name: Build APK with Expo
-        run: eas build --platform android --profile production --non-interactive
-
-      - name: Upload APK artifact
-        uses: actions/upload-artifact@v3
-        with:
-          name: expo-apk
-          path: ./build/app-release.apk
+      - name: Build APK
+        run: eas build --platform android
+        env:
+          EXPO_TOKEN: ${{ secrets.EXPO_TOKEN }}
 
