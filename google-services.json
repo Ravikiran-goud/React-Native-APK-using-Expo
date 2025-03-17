@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "914837893200",
+    "project_id": "react-native-app-e8a5d",
+    "storage_bucket": "react-native-app-e8a5d.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:914837893200:android:efc7b7769efb8603056155",
+        "android_client_info": {
+          "package_name": "com.ravigoud.myapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDu7gSRAYoL7MZvRenH9ztm6D2YDtlLBJw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
